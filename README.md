@@ -33,7 +33,7 @@ These instructions will enable a copy of the project to run on your local machin
 ### Installing
 Clone the repository of the project from Github. This will contain the simple shell program and all of its dependencies.
 ```
-git clone https://github.com/jzamora5/AirBnB_clone.git
+git clone https://github.com/Gbeminiyi-S/AirBnB_clone.git
 ```
 The following files will be contained in the cloned repository:
 
