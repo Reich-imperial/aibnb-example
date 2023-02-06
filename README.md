@@ -1,10 +1,12 @@
-![alt text](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2018/6/65f4a1dd9c51265f49d0.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20230206%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20230206T144320Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=b0f41cdf03f111851606c5ddd0b8d2c8f562fd3d1d9dcdc8f729cff09db2b32e)
-# Project Description
+# The AirBnB Clone Project
+<img src=https://camo.githubusercontent.com/d8a348e1fceb92d45fa8981ac42a6223e454acefe89750896e80fd1287cab92b/68747470733a2f2f7777772e706e676974656d2e636f6d2f70696d67732f6d2f3133322d313332323132355f7472616e73706172656e742d6261636b67726f756e642d616972626e622d6c6f676f2d68642d706e672d646f776e6c6f61642e706e67 width="400" height="300">
+
+## Project Description
 This project is a complete web application, integrating database storage, a back-end API, and front-end interfacing in a clone of AirBnB.
 
 The project currently only implements the back-end console.
 
-# Description of the command interpreter
+## Description of the command interpreter
 The interface of the application is similar to Bash shell. The difference is that it has a limited number of accepted commands that were solely defined for the purposes of the usage of the AirBnB website.
 
 This command line interpreter serves as the frontend of the web app where users can interact with the backend which was developed with python OOP programming.
