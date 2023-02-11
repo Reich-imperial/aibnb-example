@@ -178,6 +178,11 @@ class HBNBCommand(cmd.Cmd):
 
             Usage: <class name>.update(<id>, <attr name>, <attr value>)
 
+            Update your command interpreter to update an
+            instance based on his ID with a dictionary
+
+            Usage: <class name>.update(<id>, <dictionary representation>)
+
 
 
 
