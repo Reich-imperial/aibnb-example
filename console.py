@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             del (storage.all()[f"{args[0]}.{args[1]}"])
-            storage.save(self)
+            storage.save()
 
     def do_all(self, arg):
         """ Prints all string representation of all instances
@@ -113,6 +113,9 @@ class HBNBCommand(cmd.Cmd):
                 self.do_show(f"{args[0]} {identity}")
             elif args[1] == 'count()':
                 self.do_count(args[0])
+            elif args[1].startswith("destroy"):
+                identity = args[1].split('"')[1]
+                self.do_destroy(f"{args[0]} {identity}")
 
 
 if __name__ == '__main__':
