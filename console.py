@@ -153,7 +153,10 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def default(self, arg):
-        """[update]
+        """ Update your command interpreter to retrieve all
+            instances of a class
+
+                Usage: <class name>.all()
         """
         args = arg.split('.')
         if args[0] in self.__classes:
