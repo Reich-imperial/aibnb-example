@@ -168,6 +168,13 @@ class HBNBCommand(cmd.Cmd):
 
                 Usage: <class name>.show(<id>)
 
+            Update your command interpreter to destroy an
+            instance based on his ID
+
+                Usage: <class name>.destroy(<id>)
+
+
+
 
         """
         args = arg.split('.')
