@@ -98,6 +98,11 @@ class HBNBCommand(cmd.Cmd):
             store = storage.all().items()
             print([str(v) for k, v in store if k.startswith(args[0])])
 
+    def do_count(self, arg):
+        """ retrieve the number of instances of a class """
+        store = storage.all().items()
+        print(len([v for k, v in store if k.startswith(arg)]))
+
     def default(self, arg):
         args = arg.split('.')
         if args[0] in HBNBCommand.__classes:
@@ -106,6 +111,8 @@ class HBNBCommand(cmd.Cmd):
             elif args[1].startswith("show"):
                 identity = args[1].split('"')[1]
                 self.do_show(f"{args[0]} {identity}")
+            elif args[1] == 'count()':
+                self.do_count(args[0])
 
 
 if __name__ == '__main__':
