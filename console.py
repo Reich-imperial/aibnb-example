@@ -25,7 +25,8 @@ class HBNBCommand(cmd.Cmd):
                  "City",
                  "Amenity",
                  "Place",
-                 "Review"}
+                 "Review"
+                 }
 
     def do_quit(self, arg):
         """Quit command to exit the program
@@ -100,6 +101,9 @@ class HBNBCommand(cmd.Cmd):
             print([str(v) for k, v in store if k.startswith(args[0])])
 
     def do_update(self, arg):
+        """ Updates an instance based on the class name and id
+            by adding or updating attribute
+        """
         args = arg.split()
 
         if len(args) == 0:
