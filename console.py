@@ -157,6 +157,13 @@ class HBNBCommand(cmd.Cmd):
             instances of a class
 
                 Usage: <class name>.all()
+
+            Update your command interpreter to retrieve
+            the number of instances of a class
+
+                Usage: <class name>.count()
+
+
         """
         args = arg.split('.')
         if args[0] in self.__classes:
