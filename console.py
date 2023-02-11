@@ -96,7 +96,10 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_all(self, arg):
-        """[update]
+        """ Prints all string representation of all
+            instances based or not on the class name
+
+            Usage: all OR all <class_name>
         """
         args = arg.split()
 
