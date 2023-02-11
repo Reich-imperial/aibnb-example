@@ -77,7 +77,9 @@ class HBNBCommand(cmd.Cmd):
             print(storage.all()[f"{args[0]}.{args[1]}"])
 
     def do_destroy(self, arg):
-        """[update]
+        """ Deletes an instance based on the class name and id
+            
+            Usage: destroy <class_name> <object_id>
         """
         args = arg.split()
 
