@@ -183,9 +183,6 @@ class HBNBCommand(cmd.Cmd):
 
             Usage: <class name>.update(<id>, <dictionary representation>)
 
-
-
-
         """
         args = arg.split('.')
         if args[0] in self.__classes:
