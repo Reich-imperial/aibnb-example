@@ -163,6 +163,11 @@ class HBNBCommand(cmd.Cmd):
 
                 Usage: <class name>.count()
 
+            Update your command interpreter to retrieve
+            an instance based on its ID
+
+                Usage: <class name>.show(<id>)
+
 
         """
         args = arg.split('.')
