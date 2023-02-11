@@ -61,7 +61,7 @@ class HBNBCommand(cmd.Cmd):
         """ Prints the string representation of
             an instance based on the class name and id
 
-            Usage: show <class_name> <ob >
+            Usage: show <class_name> <object_id>
         """
         args = arg.split()
 
