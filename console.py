@@ -84,7 +84,7 @@ class HBNBCommand(cmd.Cmd):
             print("** no instance found **")
         else:
             del (storage.all()[f"{args[0]}.{args[1]}"])
-            storage.save( )
+            storage.save()
 
     def do_all(self, arg):
         """ Prints all string representation of all instances
@@ -97,6 +97,39 @@ class HBNBCommand(cmd.Cmd):
         else:
             store = storage.all().items()
             print([str(v) for k, v in store if k.startswith(args[0])])
+
+    def do_update(self, arg):
+        args = arg.split()
+
+        if len(args) == 0:
+            print("** class name missing **")
+        elif args[0] not in self.__classes:
+            print("** class doesn't exist **")
+        elif len(args) == 1:
+            print("** instance id missing **")
+        elif f"{args[0]}.{args[1]}" not in storage.all():
+            print("** no instance found **")
+        elif len(args) == 2:
+            print("** attribute name missing **")
+        elif len(args) == 3:
+            print("** value missing **")
+
+        obj_id = args[1]
+        obj_class = args[0]
+        obj_key = args[0] + "." + obj_id
+        obj = storage.all()[obj_key]
+
+        attr_name = args[2]
+        attr_value = args[3]
+        if attr_value[0] == '"':
+            attr_value = attr_value[1:-1]
+
+        if hasattr(obj, attr_name):
+            type_ = type(getattr(obj, attr_name))
+            attr_value = type_(attr_value)
+
+        setattr(obj, attr_name, attr_value)
+        storage.save()
 
     def do_count(self, arg):
         """ retrieve the number of instances of a class """
