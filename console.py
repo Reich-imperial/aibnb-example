@@ -100,43 +100,43 @@ class HBNBCommand(cmd.Cmd):
             store = storage.all().items()
             print([str(v) for k, v in store if k.startswith(args[0])])
 
-    def do_update(self, arg):
-        """ Updates an instance based on the class name and id
-            by adding or updating attribute
-        """
-        args = arg.split()
+    #def do_update(self, arg):
+     #   """ Updates an instance based on the class name and id
+      #      by adding or updating attribute
+       # """
+        #args = arg.split()
+#
+ #       if len(args) == 0:
+  #          print("** class name missing **")
+   #     elif args[0] not in self.__classes:
+    #        print("** class doesn't exist **")
+     #   elif len(args) == 1:
+      #      print("** instance id missing **")
+       # elif f"{args[0]}.{args[1]}" not in storage.all():
+         #   print("** no instance found **")
+        #elif len(args) == 2:
+         #   print("** attribute name missing **")
+        #elif len(args) == 3:
+         #   print("** value missing **")
 
-        if len(args) == 0:
-            print("** class name missing **")
-        elif args[0] not in self.__classes:
-            print("** class doesn't exist **")
-        elif len(args) == 1:
-            print("** instance id missing **")
-        elif f"{args[0]}.{args[1]}" not in storage.all():
-            print("** no instance found **")
-        elif len(args) == 2:
-            print("** attribute name missing **")
-        elif len(args) == 3:
-            print("** value missing **")
-
-        obj_id = args[1]
-        obj_class = args[0]
-        obj_key = args[0] + "." + obj_id
-        obj = storage.all()[obj_key]
-
-        attr_name = args[2]
-        attr_value = args[3]
-        if attr_value[0] == '"':
-            attr_value = attr_value[1:-1]
-
-        if hasattr(obj, attr_name):
-            type_ = type(getattr(obj, attr_name))
-            if type_ in [str, float, int]:
-                attr_value = type_(attr_value)
-                setattr(obj, attr_name, attr_value)
-        else:
-            setattr(obj, attr_name, attr_value)
-        storage.save()
+#        obj_id = args[1]
+ #       obj_class = args[0]
+  #      obj_key = args[0] + "." + obj_id
+   #     obj = storage.all()[obj_key]
+#
+ #       attr_name = args[2]
+  #      attr_value = args[3]
+   #     if attr_value[0] == '"':
+    #        attr_value = attr_value[1:-1]
+#
+ #       if hasattr(obj, attr_name):
+  #          type_ = type(getattr(obj, attr_name))
+   #         if type_ in [str, float, int]:
+    #            attr_value = type_(attr_value)
+     #           setattr(obj, attr_name, attr_value)
+      #  else:
+       #     setattr(obj, attr_name, attr_value)
+        #storage.save()
 
     def do_count(self, arg):
         """ retrieve the number of instances of a class """
