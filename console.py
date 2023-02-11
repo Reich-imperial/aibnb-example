@@ -35,12 +35,14 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """[update]
+        """ Method called when an empty line is
+            entered in response to the prompt
         """
         return
 
     def do_create(self, arg):
-        """[update]
+        """ Creates a new instance of BaseModel,
+            saves it (to the JSON file) and prints the id
         """
         args = arg.split()
 
