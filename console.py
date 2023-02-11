@@ -34,12 +34,12 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """
+        """[update]
         """
         return
 
     def do_create(self, arg):
-        """
+        """[update]
         """
         args = arg.split()
 
@@ -53,7 +53,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_show(self, arg):
-        """
+        """[update]
         """
         args = arg.split()
 
@@ -69,7 +69,7 @@ class HBNBCommand(cmd.Cmd):
             print(storage.all()[f"{args[0]}.{args[1]}"])
 
     def do_destroy(self, arg):
-        """
+        """[update]
         """
         args = arg.split()
 
@@ -86,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_all(self, arg):
-        """
+        """[update]
         """
         args = arg.split()
 
@@ -99,7 +99,7 @@ class HBNBCommand(cmd.Cmd):
             print([str(v) for k, v in _dict if k.startswith(args[0])])
 
     def do_update(self, arg):
-        """
+        """[update]
         """
         args = arg.split()
 
@@ -137,7 +137,7 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def default(self, arg):
-        """
+        """[update]
         """
         args = arg.split('.')
         if args[0] in self.__classes:
