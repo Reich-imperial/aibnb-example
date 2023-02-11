@@ -112,7 +112,10 @@ class HBNBCommand(cmd.Cmd):
             print([str(v) for k, v in _dict if k.startswith(args[0])])
 
     def do_update(self, arg):
-        """[update]
+        """ Updates an instance based on the class
+            name and id by adding or updating attribute
+
+            Usage: update <class name> <id> <attr name> "<attr value>"
         """
         args = arg.split()
 
