@@ -173,6 +173,11 @@ class HBNBCommand(cmd.Cmd):
 
                 Usage: <class name>.destroy(<id>)
 
+            Update your command interpreter to update an
+            instance based on his ID
+
+            Usage: <class name>.update(<id>, <attr name>, <attr value>)
+
 
 
 
