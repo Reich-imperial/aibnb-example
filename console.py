@@ -19,7 +19,13 @@ class HBNBCommand(cmd.Cmd):
     """
 
     prompt = "(hbnb) "
-    __classes = {"BaseModel"}
+    __classes = {"BaseModel",
+                 "User",
+                 "State",
+                 "City",
+                 "Amenity",
+                 "Place",
+                 "Review"}
 
     def do_quit(self, arg):
         """Quit command to exit the program
@@ -91,6 +97,15 @@ class HBNBCommand(cmd.Cmd):
         else:
             store = storage.all().items()
             print([str(v) for k, v in store if k.startswith(args[0])])
+
+    def default(self, arg):
+        args = arg.split('.')
+        if args[0] in HBNBCommand.__classes:
+            if args[1] == 'all()':
+                self.do_all(args[0])
+            elif args[1].startswith("show"):
+                identity = args[1].split('"')[1]
+                self.do_show(f"{args[0]} {identity}")
 
 
 if __name__ == '__main__':
