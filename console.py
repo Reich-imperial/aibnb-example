@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ This module defines a class `HBNBCommand` """
 import cmd
+import re
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
@@ -44,7 +45,7 @@ class HBNBCommand(cmd.Cmd):
         """ Creates a new instance of BaseModel,
             saves it (to the JSON file) and prints the id
 
-            Usage: create <class_name> 
+            Usage: create <class_name>
         """
         args = arg.split()
 
@@ -78,7 +79,7 @@ class HBNBCommand(cmd.Cmd):
 
     def do_destroy(self, arg):
         """ Deletes an instance based on the class name and id
-            
+
             Usage: destroy <class_name> <object_id>
         """
         args = arg.split()
@@ -199,7 +200,8 @@ class HBNBCommand(cmd.Cmd):
                 id_ = args[1].split('"')[1]
                 self.do_destroy(f"{args[0]} {id_}")
             elif args[1].startswith("update"):
-                split_ = re.split('"update\("|", "|\"', args[1])
+                split_ = re.split('"update"|", "|\"', args[1])
+                print(split_)
                 id_ = split_[1]
                 attr_name = split_[2]
                 attr_value = split_[3]
