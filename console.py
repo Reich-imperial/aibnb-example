@@ -35,12 +35,16 @@ class HBNBCommand(cmd.Cmd):
         return True
 
     def emptyline(self):
-        """[update]
+        """ Method called when an empty line is
+            entered in response to the prompt
         """
         return
 
     def do_create(self, arg):
-        """[update]
+        """ Creates a new instance of BaseModel,
+            saves it (to the JSON file) and prints the id
+
+            Usage: create <class_name> 
         """
         args = arg.split()
 
@@ -54,7 +58,10 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_show(self, arg):
-        """[update]
+        """ Prints the string representation of
+            an instance based on the class name and id
+
+            Usage: show <class_name> <object_id>
         """
         args = arg.split()
 
@@ -70,7 +77,9 @@ class HBNBCommand(cmd.Cmd):
             print(storage.all()[f"{args[0]}.{args[1]}"])
 
     def do_destroy(self, arg):
-        """[update]
+        """ Deletes an instance based on the class name and id
+            
+            Usage: destroy <class_name> <object_id>
         """
         args = arg.split()
 
@@ -87,7 +96,10 @@ class HBNBCommand(cmd.Cmd):
         storage.save()
 
     def do_all(self, arg):
-        """[update]
+        """ Prints all string representation of all
+            instances based or not on the class name
+
+            Usage: all OR all <class_name>
         """
         args = arg.split()
 
@@ -100,7 +112,10 @@ class HBNBCommand(cmd.Cmd):
             print([str(v) for k, v in _dict if k.startswith(args[0])])
 
     def do_update(self, arg):
-        """[update]
+        """ Updates an instance based on the class
+            name and id by adding or updating attribute
+
+            Usage: update <class name> <id> <attr name> "<attr value>"
         """
         args = arg.split()
 
@@ -138,7 +153,36 @@ class HBNBCommand(cmd.Cmd):
             storage.save()
 
     def default(self, arg):
-        """[update]
+        """ Update your command interpreter to retrieve all
+            instances of a class
+
+                Usage: <class name>.all()
+
+            Update your command interpreter to retrieve
+            the number of instances of a class
+
+                Usage: <class name>.count()
+
+            Update your command interpreter to retrieve
+            an instance based on its ID
+
+                Usage: <class name>.show(<id>)
+
+            Update your command interpreter to destroy an
+            instance based on his ID
+
+                Usage: <class name>.destroy(<id>)
+
+            Update your command interpreter to update an
+            instance based on his ID
+
+            Usage: <class name>.update(<id>, <attr name>, <attr value>)
+
+            Update your command interpreter to update an
+            instance based on his ID with a dictionary
+
+            Usage: <class name>.update(<id>, <dictionary representation>)
+
         """
         args = arg.split('.')
         if args[0] in self.__classes:
