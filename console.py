@@ -200,11 +200,26 @@ class HBNBCommand(cmd.Cmd):
                 id_ = args[1].split('"')[1]
                 self.do_destroy(f"{args[0]} {id_}")
             elif args[1].startswith("update"):
-                split_ = re.split('"update"|", "|\"', args[1])
-                id_ = split_[1]
-                attr_name = split_[2]
-                attr_value = split_[3]
-                self.do_update(f'{args[0]} {id_} {attr_name} "{attr_value}"')
+                split_ = args[1].split('(')
+                split_ = split_[1].split(')')
+                if ('{') in split_[0]:
+                    # if a dictionary is passed
+                    id_strip = split_[0].split(', {')
+                    id_strip = id_strip[0].split(', {')
+                    id_ = id_strip[0].strip('"')
+
+                    split_ = '{' + (split_[0].split('{'))[1]
+                    dict_ = eval(split_.strip('"'))
+
+                    if type(dict_) == dict:
+                        for k, v in dict_.items():
+                            self.do_update(f"{args[0]} {id_} {k} {v}")
+                else:
+                    split_ = split_[0].split(', ')
+                    id_ = split_[0].strip('"')
+                    attr_name = split_[1].strip('"')
+                    attr_value = split_[2].strip('"')
+                    self.do_update(f"{args[0]} {id_} {attr_name} {attr_value}")
 
 
 if __name__ == '__main__':
