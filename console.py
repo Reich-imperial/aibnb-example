@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ This module defines a class `HBNBCommand` """
 import cmd
-import re
 from models.base_model import BaseModel
 from models import storage
 from models.user import User
