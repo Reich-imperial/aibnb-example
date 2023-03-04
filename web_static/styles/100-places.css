@@ -16,7 +16,6 @@ article h2 {
     font-size: 30px;
     margin: 0 auto;
     margin-right: 40px;
-    width: 100%;
 }
 
 div.choices {
@@ -76,15 +75,16 @@ div.heading {
     height: 50px;
 }
 
-.places div.amenities {
+.places div.amenities, .reviews {
     margin-top: 40px;
     width: 100%;
     height: fit-content;
 }
 
-.places .amenities h2 {
+.places .amenities h2, .reviews h2 {
     font-size: 16px;
     border-bottom: 1px solid #DDDDDD;
+    padding-bottom: 10px;
 }
 
 .places div.amenities ul {
@@ -120,4 +120,19 @@ div.pet_icon {
 
 div.jacuzzi_icon {
     background-image: url("../images/icon_jacuzzi.png");
+}
+
+.reviews ul {
+    padding-left: 0;
+    list-style-type: none;
+}
+
+.reviews ul h3 {
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.reviews ul p {
+    font-size: 12px;
+    margin-top: 0;
 }
